@@ -35,6 +35,8 @@ function agregartweet(e){
     const tweetobj = {
         id: Date.now(),
         imagen: URL.createObjectURL(imagen)
+        
+
     }
 
     tweets = [...tweets, tweetobj];
@@ -65,21 +67,40 @@ function crearhtml(){ limpiarhtml();
             const botonborrar = document.createElement('a');
             botonborrar.classList= 'borrar-tweet';
             botonborrar.innerText = 'Eliminar';
-            const corazon = document.createElement('ig');
+            let contador2 = 0;
+            const likes = document.createElement('p');
+            likes.textContent= `likes:${contador2}`;
+            // likes.addEventListener('click',()=>{
+            //    contador2 ++;
+            //     console.log(contador2);
+            //     likes.textContent = `likes:${contador2}`
+              
+            // })
+            const corazon = document.createElement('img');
             corazon.src = 'https://cdn-icons-png.flaticon.com/128/6023/6023551.png'
             corazon.style.width = '50px';
-            contador = 0;
+            // let contador = 1;
             corazon.addEventListener('click',()=>{
            
-                if(contador === 0){
-                    corazon.src = 'https://cdn-icons-png.flaticon.com/128/6023/6023551.png';
-                    contador=1
-                }else if(contador===1){
+                // if(contador === 0){
+                    // corazon.src = 'https://cdn-icons-png.flaticon.com/128/6023/6023551.png';
                     corazon.src = 'https://cdn-icons-png.flaticon.com/128/5186/5186331.png';
-                    contador=0
-                }
+                    contador2 ++;
+                    // contador=1
+                    
+                    likes.textContent= `likes:${contador2}`;
+                   
+                    console.log(contador2);}
+                //    console.log(resultado);
+                // }else if(contador===1){
+                //     corazon.src = 'https://cdn-icons-png.flaticon.com/128/5186/5186331.png';
+                //     contador=0;
+                    
+                    // contador2 --;
+                    // likes.textContent= `likes:${contador2}`;
+                    // console.log(contador2);
                 
-            })
+                )
             botonborrar.onclick = () => {
                 borrartweet(imagen.id);
             }
@@ -92,6 +113,7 @@ function crearhtml(){ limpiarhtml();
             img.appendChild(botonborrar);
             listatweets.appendChild(botonborrar);
             listatweets.appendChild(corazon);
+            listatweets.appendChild(likes);
         })
     }
     agregarstorage();
