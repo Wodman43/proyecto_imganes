@@ -65,17 +65,17 @@ function crearhtml(){ limpiarhtml();
             const botonborrar = document.createElement('a');
             botonborrar.classList= 'borrar-tweet';
             botonborrar.innerText = 'Eliminar';
-            const corazon = document.createElement('img');
-            corazon.src = 'https://cdn-icons-png.flaticon.com/128/8901/8901364.png'
+            const corazon = document.createElement('ig');
+            corazon.src = 'https://cdn-icons-png.flaticon.com/128/6023/6023551.png'
             corazon.style.width = '50px';
             contador = 0;
             corazon.addEventListener('click',()=>{
            
                 if(contador === 0){
-                    corazon.src = 'https://cdn-icons-png.flaticon.com/128/8901/8901364.png';
+                    corazon.src = 'https://cdn-icons-png.flaticon.com/128/6023/6023551.png';
                     contador=1
                 }else if(contador===1){
-                    corazon.src = 'https://cdn-icons-png.flaticon.com/128/10970/10970401.png';
+                    corazon.src = 'https://cdn-icons-png.flaticon.com/128/5186/5186331.png';
                     contador=0
                 }
                 
