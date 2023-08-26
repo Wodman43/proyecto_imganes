@@ -31,10 +31,10 @@ function agregartweet(e){
         mostrarerror('Este campo No puede estar vacio');
         return;
     }
-   
     const tweetobj = {
         id: Date.now(),
-        imagen: URL.createObjectURL(imagen)
+        imagen: URL.createObjectURL(imagen),
+        cant:0,
         
 
     }
@@ -67,7 +67,7 @@ function crearhtml(){ limpiarhtml();
             const botonborrar = document.createElement('a');
             botonborrar.classList= 'borrar-tweet';
             botonborrar.innerText = 'Eliminar';
-            let contador2 = 0;
+            let contador2 = imagen.cant;
             const likes = document.createElement('p');
             likes.textContent= `likes:${contador2}`;
             // likes.addEventListener('click',()=>{
